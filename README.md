@@ -11,6 +11,7 @@ literature exploration.
 ---
 
 Installation
+---
 ``pip install .`` in Package-root
 
 
