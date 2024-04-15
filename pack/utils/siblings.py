@@ -1,3 +1,4 @@
+
 import requests
 
 class SibInfo:
@@ -16,25 +17,25 @@ class SibInfo:
         req = requests.get(f'https://api.openalex.org/fields/{id}?page=1&per-page=200')
         res = req.json()
 
-        self.sfields = [result['display_name'] for result in res['siblings']]
-        self.sfield_url = [result["id"] for result in res['siblings']]
-        self.sfield_id = [result["id"][-2:] for result in res['siblings']] # Get numerical ids of fields as strings
-        self.sinfo = zip(self.sfields, self.sfield_id, self.sfield_url)
+        self.fields = [result['display_name'] for result in res['siblings']]
+        self.field_url = [result["id"] for result in res['siblings']]
+        self.field_id = [result["id"][-2:] for result in res['siblings']] # Get numerical ids of fields as strings
+        self.info = zip(self.fields, self.field_id, self.field_url)
 
     def sib_info(self):  
     # Adding print statements based on conditions to generate a table of fields information
         sib_info = ""
         
-        for i,j,k in self.sinfo:
+        for i,j,k in self.info:
             
-            if i == self.sfields[0]:
+            if i == self.fields[0]:
                 line = f'{"Fields":50s}{"ID":10s}{"URL":50s}\n{i:50s}{j:10s}{k:50s}\n'
         
-            elif i != self.sfields[-1]:
+            elif i != self.fields[-1]:
                 line = f'{i:50s}{j:10s}{k:50s}\n'
         
             else:
-                line = f'{i:50s}{j:10s}{k:50s}\n\nNumber of Sibling fields = {len(self.sfields)}'
+                line = f'{i:50s}{j:10s}{k:50s}\n\nNumber of Sibling fields = {len(self.fields)}'
                 
             sib_info += line
                 

@@ -1,3 +1,4 @@
+
 import requests
 
 class FieldInfo:
@@ -8,8 +9,8 @@ class FieldInfo:
 
         self.fields = [result['display_name'] for result in res['results']]
         self.field_url = [result["id"] for result in res['results']]
-        self.fields_id = [result["id"][-2:] for result in res['results']] # Get numerical ids of fields as strings
-        self.finfo = zip(self.fields, self.fields_id, self.field_url)
+        self.field_id = [result["id"][-2:] for result in res['results']] # Get numerical ids of fields as strings
+        self.finfo = zip(self.fields, self.field_id, self.field_url)
     
     
     def field_info(self):  
@@ -30,3 +31,4 @@ class FieldInfo:
             field_info += line
             
         return field_info 
+    

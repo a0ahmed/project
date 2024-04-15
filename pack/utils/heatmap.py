@@ -1,16 +1,11 @@
 
 import plotly.graph_objects as go
 
-def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_9, cai_9, publisher, Institutions):
-
-    # Convert dictionary to a 2D array (matrix)
-    matrix1 = publisher_count
-    matrix2 = Ins_count
-    matrix3 = ta_count
+def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_15, cai_15, publisher, Institutions):
 
     # Create the heatmap
     fig = go.Figure(data = go.Heatmap(
-                    z=matrix1,
+                    z=publisher_count,
                     hovertemplate='Z: %{z}',
                     text=publisher, 
                     texttemplate="%{text}",
@@ -19,11 +14,11 @@ def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_9, cai_9, p
                     colorscale = 'Viridis'))
     
     fig2 = go.Figure(data = go.Heatmap(
-                    z=matrix2,
+                    z=Ins_count,
                     hovertemplate='Z: %{z}',
                     text=Institutions, 
                     texttemplate="%{text}",
-                    textfont={"size":8},
+                    textfont={"size":10},
                     colorbar={"title":"Frequency"},
                     colorscale = 'Blackbody'))
     
@@ -31,7 +26,7 @@ def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_9, cai_9, p
     hover_text = [[f'<a href="{name}" target="_blank" style="color:#FFFFFF">{url}</a>' for name, url in zip(ta,row)] for row,ta in zip(ta,ta_url)]
     
     fig3 = go.Figure(data = go.Heatmap(
-                    z=matrix3,
+                    z=ta_count,
                     text=hover_text, 
                     hovertemplate='Z: %{z}',        
                     customdata = ta_url,
@@ -42,8 +37,8 @@ def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_9, cai_9, p
 
     # Update figure layouts
     fig.update_layout(
-        height = 400,
-        width = 1200,
+        height = 410,
+        width = 1350,
         xaxis1=dict(showticklabels=False, showline=False),
         yaxis1=dict(showticklabels=False, showline=False),
         xaxis2=dict(showticklabels=False, showline=False),
@@ -52,8 +47,8 @@ def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_9, cai_9, p
     )
     
     fig2.update_layout(
-        height = 400,
-        width = 1200,
+        height = 410,
+        width = 1350,
         xaxis1=dict(showticklabels=False, showline=False),
         yaxis1=dict(showticklabels=False, showline=False),
         xaxis2=dict(showticklabels=False, showline=False),
@@ -62,8 +57,8 @@ def Heatmap(publisher_count, ta, ta_count, ta_url, Ins_count, source_9, cai_9, p
     )
     
     fig3.update_layout(
-        height = 400,
-        width = 1200,
+        height = 410,
+        width = 1350,
         xaxis1=dict(showticklabels=False, showline=False),
         yaxis1=dict(showticklabels=False, showline=False),
         xaxis2=dict(showticklabels=False, showline=False),
