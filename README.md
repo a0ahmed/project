@@ -6,7 +6,7 @@
 The ``pack`` package is a pip installable package that takes a user query as a funciton call and 
 outputs the top 10 works relevant to the specified field id with the greatest number of citations.
 
-Additionally, heatmaps are generated showing the frequency of the top 16 publishers, intitutions,
+Additionally, heatmaps are generated showing the frequency of the top 15 publishers, intitutions,
 and first-named authors that have works matching the users query. These visiualizations serve to aid the user 
 in further literature exploration.
 
@@ -52,10 +52,10 @@ summary and heat map visualizaitons
 
 Typical usage scenarios include running the following in a notebook:
     
-    FieldInfo().fieldsinfo() > printed summary of all fields
-    SibInfo().sibinfo(15) > printed summary of all subfields for field id=15
-    works_search('redox flow battery',15) > printed summary of top 10 works and heatmaps of 
-                                            top 15 journals, institutions, and authors.
+    FieldInfo().fieldsinfo() --> returns printed summary of all fields
+    SibInfo().sibinfo(15) --> returns printed summary of all subfields for field id=15
+    works_search('redox flow battery',15) --> returns summary of top 10 works and heatmaps 
+                                              of top 15 journals, institutions, and authors.
         
 Additional information on each function and class can be found in their docstrings.
 
