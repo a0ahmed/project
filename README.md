@@ -1,34 +1,19 @@
 
+---
+
 ## Overview
 
 The ``pack`` package is a pip installable package that takes a user query as a funciton call and 
 outputs the top 10 works relevant to the specified field id with the greatest number of citations.
 
-Additionally, heatmaps are generated showing the frequency of the top publishers and intitutions 
-that have works matching the users query. This visiualizations serves to aid the user in further
-literature exploration.
+Additionally, heatmaps are generated showing the frequency of the top 16 publishers, intitutions,
+and first-named authors that have works matching the users query. These visiualizations serve to aid the user 
+in further literature exploration.
 
 ---
 
-Installation
----
-``pip install .`` in Package-root
+## Repository Structure
 
-
-Usage
----
-
-After installing the package and importing all files, the following commands will be available 
-
-- ``FieldInfo`` class object that returns summary information on fields 
-- ``SibInfo`` class object that returns summary information on related fields and takes as input a 
-field id
-- ``work_search(query,id)`` function that takes a query and field id and provides a tabulated 
-summary and heat map visualizaitons
-
-
-
-## 📂 Repository Structure
 
 ```sh
 ├── LICENSE
@@ -48,4 +33,33 @@ summary and heat map visualizaitons
 
 ---
 
-After installing this package...
+## Installation
+
+``pip install .`` in Package-root
+
+---
+
+## Usage
+
+
+After installing the package and importing all files, the following commands will be available 
+
+- ``FieldInfo`` class object that returns summary information on fields 
+- ``SibInfo`` class object that returns summary information on related fields and takes as input a 
+field id
+- ``work_search(query,id)`` function that takes a query and field id and provides a tabulated 
+summary and heat map visualizaitons
+
+Typical usage scenarios include running the following in a notebook:
+    
+    FieldInfo().fieldsinfo() > printed summary of all fields
+    SibInfo().sibinfo(15) > printed summary of all subfields for field id=15
+    works_search('redox flow battery',15) > printed summary of top 10 works and heatmaps of 
+                                            top 15 journals, institutions, and authors.
+        
+Additional information on each function and class can be found in their docstrings.
+
+---
+
+## Author
+[Abdul Ahmed](https://github.com/a0ahmed)
