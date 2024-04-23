@@ -52,9 +52,9 @@ summary and heat map visualizaitons
 
 Typical usage scenarios include running the following in a notebook:
     
-    FieldInfo().fieldsinfo() --> returns printed summary of all fields
-    SibInfo().sibinfo(15) --> returns printed summary of all subfields for field id=15
-    works_search('redox flow battery',15) --> returns summary of top 10 works and heatmaps 
+    FieldInfo().field_info() --> returns printed summary of all fields
+    SibInfo(15).sib_info() --> returns printed summary of all subfields for field id=15
+    work_search('redox flow battery',15) --> returns summary of top 10 works and heat maps 
                                               of top 15 journals, institutions, and authors.
         
 Additional information on each function and class can be found in their docstrings.
