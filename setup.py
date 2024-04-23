@@ -6,5 +6,4 @@ setup(name='pack',
       maintainer='Abdul Ahmed',
       maintainer_email='abdulhak@andrew.cmu.edu',
       license='MIT',
-      packages=['pack'],
-      long_description = ''' A Long description.''')
+      packages=['pack','pack.utils'])
