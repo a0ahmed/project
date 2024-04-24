@@ -35,8 +35,8 @@ in further literature exploration.
 
 ## Installation
 
-First clone with ``git clone https://github.com/a0ahmed/project``
-Then, ``pip install .`` in the package root directory
+1. First clone with ``git clone https://github.com/a0ahmed/project``
+2. Then, ``pip install .`` in the package root directory
 
 ---
 
